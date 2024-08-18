@@ -25,7 +25,7 @@ spec:
       nodeSelector:
         worker: "true"
       containers:
-        - image: docker.io/mongo:7.0
+        - image: docker.io/mongo:4.4
           imagePullPolicy: IfNotPresent
           name: unifi-db
           args: ["--dbpath", "/data/db"]
