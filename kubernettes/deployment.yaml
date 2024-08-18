@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: unifi-controller
   labels:
     app: unifi-controller
+  name: unifi-controller
 spec:
   replicas: 1
   selector:
@@ -15,8 +15,8 @@ spec:
         app: unifi-controller
     spec:
       containers:
-      - name: unifi-controller
-        image: jacobalberty/unifi:latest
+      - image: jacobalberty/unifi:latest
+        name: unifi-controller
         ports:
         - containerPort: 8443
         - containerPort: 8080
