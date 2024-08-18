@@ -17,7 +17,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: unifi-controller
+            name: unifi-tcp
             port:
               number: 8443
   tls:
