@@ -22,5 +22,5 @@ spec:
               number: 8443
   tls:
   - hosts:
-    - `unifi123.rajhmlab.duckdns.org
+    - unifi123.rajhmlab.duckdns.org
     secretName: unifi-tls
