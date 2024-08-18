@@ -10,9 +10,9 @@ spec:
     port: 8443
   - name: http
     port: 8080
-  - name: secure_http
+  - name: secure-http
     port: 8843
-  - name: unsecure_http
+  - name: unsecure-http
     port: 8880
   - name: stun
     port: 3478
