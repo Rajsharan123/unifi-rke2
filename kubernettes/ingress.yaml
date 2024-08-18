@@ -23,4 +23,3 @@ spec:
   tls:
   - hosts:
     - unifi123.rajhmlab.duckdns.org
-    secretName: unifi-tls
