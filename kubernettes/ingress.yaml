@@ -10,7 +10,7 @@ metadata:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
   rules:
-  - host: unifi.example.com
+  - host: unifi123.rajhmlab.duckdns.org
     http:
       paths:
       - path: /
