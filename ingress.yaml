@@ -1,0 +1,24 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: unifi-controller
+  namespace: unifi-controller
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`unifi123.rajhmlab.duckdns.org`) # change to your domain
+      kind: Rule
+      services:
+        - name: unifi-tcp
+          port: 8443
+          scheme: https
+      middlewares:
+        - name: default-headers
+  tls:
+    secretName: unifi-tls # change to your cert name
