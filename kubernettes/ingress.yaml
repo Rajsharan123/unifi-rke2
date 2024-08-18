@@ -9,16 +9,18 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
 spec:
-  entryPoints:
-    - websecure
-  routes:
-    - match: Host(`unifi123.rajhmlab.duckdns.org`) # change to your domain
-      kind: Rule
-      services:
-        - name: unifi-tcp
-          port: 8443
-          scheme: https
-      middlewares:
-        - name: default-headers
+  rules:
+  - host: unifi.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: unifi-controller
+            port:
+              number: 8443
   tls:
-    secretName: unifi-tls # change to your cert name
+  - hosts:
+    - `unifi123.rajhmlab.duckdns.org
+    secretName: unifi-tls
