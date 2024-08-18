@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: unifi-controller
+  labels:
+    app: unifi-controller
+spec:
+  selector:
+    app: unifi-controller
+  ports:
+  - port: 8443
+    targetPort: 8443
+    protocol: TCP
+    name: https
+  - port: 8080
+    targetPort: 8080
+    protocol: TCP
+    name: http
+  - port: 8843
+    targetPort: 8843
+    protocol: TCP
+    name: secure_http
+  - port: 8880
+    targetPort: 8880
+    protocol: TCP
+    name: unsecure_http
+  - port: 3478
+    targetPort: 3478
+    protocol: UDP
+    name: stun
+  type: ClusterIP
